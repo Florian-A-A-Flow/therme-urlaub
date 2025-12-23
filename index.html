@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermenfahrt Palais Thermal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #065f46 100%); }
+        .card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .btn-toggle { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-active { background-color: #1e3a8a !important; color: white !important; transform: scale(1.05); }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .map-container iframe { width: 100%; height: 300px; border-radius: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <header class="hero-gradient text-white py-16 px-6 text-center shadow-xl">
+        <i class="fa-solid fa-spa text-5xl mb-4 text-amber-400 animate-pulse"></i>
+        <h1 class="text-4xl md:text-6xl mb-4">Thermenfahrt Palais Thermal</h1>
+        <div class="bg-white/10 backdrop-blur-md inline-block px-4 py-2 rounded-full border border-white/20">
+            <p class="text-sm md:text-base font-light italic">
+                <i class="fa-solid fa-circle-info mr-2"></i>Disclaimer: Dieser Termin ist ein Vorschlag.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+
+        <section class="fade-in">
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="bg-amber-500 text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">1</span>
+                <h2 class="text-3xl text-blue-900">Tag 1: Die Reise beginnt</h2>
+            </div>
+            
+            <div class="card p-6 mb-8">
+                <h3 class="font-semibold text-xl mb-4"><i class="fa-solid fa-car mr-2 text-blue-600"></i>Anreise aus Innsbruck</h3>
+                <div class="map-container mb-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1354041.597651034!2d9.243543141704258!3d47.7844111352462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x479d6ec00172e01d%3A0x397d3a08eea251d3!2sInnsbruck!3m2!1d47.2692124!2d11.4041024!4m5!1s0x4797402a7b11d871%3A0x421f1c67d710380!2sBad%20Wildbad!3m2!1d48.7503!2d8.5502!5e0!3m2!1sde!2sde!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="flex justify-between items-center text-sm bg-blue-50 p-4 rounded-lg text-blue-800">
+                    <span><i class="fa-solid fa-route mr-1"></i> ca. 310 km</span>
+                    <span><i class="fa-solid fa-clock mr-1"></i> ca. 3 Std. 45 Min.</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel Moknis" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg mb-2">Check-in: Hotel Mokni's</h4>
+                        <a href="https://www.moknis.com/de/" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Zur Website <i class="fa-solid fa-external-link ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img src="https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&w=600&q=80" alt="Therme" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg mb-2">Abend im Palais Thermal</h4>
+                        <p class="text-sm text-gray-600 italic">Eintauchen in orientalische Badeträume.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="bg-emerald-500 text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">2</span>
+                <h2 class="text-3xl text-emerald-900">Tag 2: Entspannung pur</h2>
+            </div>
+            <div class="card p-8 bg-emerald-50 border-l-8 border-emerald-500">
+                <h3 class="text-xl font-bold mb-4 text-emerald-800"><i class="fa-solid fa-leaf mr-2"></i>Vegan in Bad Wildbad</h3>
+                <p class="mb-4">Genieße deinen Thermentag ohne Kompromisse. Die Therme selbst und lokale Restaurants bieten tolle Optionen:</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-2"></i> <strong>Maurisches Café:</strong> In der Therme gibt es vegane Bowls und Säfte.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-2"></i> <strong>Sardis (Bad Wildbad):</strong> Mediterrane Küche mit vielen anpassbaren veganen Antipasti und Pasta-Gerichten.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-2"></i> <strong>Melange:</strong> Süße vegane Optionen und Kaffeespezialitäten.</li>
+                </ul>
+            </div>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400" class="rounded-xl shadow h-40 w-full object-cover" alt="Spa Detail">
+                <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?auto=format&fit=crop&w=400" class="rounded-xl shadow h-40 w-full object-cover" alt="Spa Pool">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400" class="rounded-xl shadow h-40 w-full object-cover hidden md:block" alt="Vegan Food">
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="bg-indigo-600 text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">3</span>
+                <h2 class="text-3xl text-indigo-900">Tag 3: Rückreise mit Erlebnissen</h2>
+            </div>
+
+            <div class="card p-6 mb-8">
+                <h3 class="font-bold text-xl mb-6 text-center text-indigo-800">1. Zwischenstopp: Tübingen</h3>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button onclick="selectTuebingen('A')" id="btn-tue-a" class="btn-toggle px-6 py-2 rounded-full border-2 border-indigo-600 text-indigo-600 font-semibold">Option A</button>
+                    <button onclick="selectTuebingen('B')" id="btn-tue-b" class="btn-toggle px-6 py-2 rounded-full border-2 border-indigo-600 text-indigo-600 font-semibold">Option B</button>
+                </div>
+                <div id="tuebingen-content" class="text-center animate-pulse-fast">
+                    <p class="italic text-gray-500">Wähle eine Option oben aus!</p>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="font-bold text-xl mb-6 text-center text-indigo-800">2. Zwischenstopp: Kultur pur</h3>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button onclick="selectCastle('A')" id="btn-cas-a" class="btn-toggle px-6 py-2 rounded-full border-2 border-indigo-600 text-indigo-600 font-semibold">Option A</button>
+                    <button onclick="selectCastle('B')" id="btn-cas-b" class="btn-toggle px-6 py-2 rounded-full border-2 border-indigo-600 text-indigo-600 font-semibold">Option B</button>
+                </div>
+                <div id="castle-content" class="text-center">
+                    <p class="italic text-gray-500">Wähle eine Option oben aus!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-blue-900 text-white py-10 text-center">
+        <p class="opacity-75">Gute Reise & entspannte Stunden!</p>
+        <div class="mt-4 text-2xl space-x-4 text-amber-400">
+            <i class="fa-solid fa-car"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-spa"></i>
+        </div>
+    </footer>
+
+    <script>
+        function selectTuebingen(option) {
+            const content = document.getElementById('tuebingen-content');
+            const btnA = document.getElementById('btn-tue-a');
+            const btnB = document.getElementById('btn-tue-b');
+            
+            if(option === 'A') {
+                btnA.classList.add('btn-active'); btnB.classList.remove('btn-active');
+                content.innerHTML = `
+                    <div class="fade-in">
+                        <img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=600" class="rounded-xl mb-4 h-48 w-full object-cover">
+                        <h4 class="font-bold text-xl text-indigo-700">Köstlich Vegan</h4>
+                        <p class="text-gray-600 mt-2 px-4 text-sm">Ein rein veganes Bistro mit täglich wechselnden, hausgemachten Gerichten in gemütlicher Atmosphäre.</p>
+                        <a href="https://maps.google.com/?q=Köstlich+Vegan+Tübingen" target="_blank" class="text-indigo-600 mt-2 inline-block font-semibold underline">Route zeigen</a>
+                    </div>`;
+            } else {
+                btnB.classList.add('btn-active'); btnA.classList.remove('btn-active');
+                content.innerHTML = `
+                    <div class="fade-in">
+                        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600" class="rounded-xl mb-4 h-48 w-full object-cover">
+                        <h4 class="font-bold text-xl text-indigo-700">Bongoroots</h4>
+                        <p class="text-gray-600 mt-2 px-4 text-sm">Afrikanische Spezialitäten mit herzhaften veganen Eintöpfen und exotischen Gewürzen.</p>
+                        <a href="https://maps.google.com/?q=Bongoroots+Tübingen" target="_blank" class="text-indigo-600 mt-2 inline-block font-semibold underline">Route zeigen</a>
+                    </div>`;
+            }
+        }
+
+        function selectCastle(option) {
+            const content = document.getElementById('castle-content');
+            const btnA = document.getElementById('btn-cas-a');
+            const btnB = document.getElementById('btn-cas-b');
+            
+            if(option === 'A') {
+                btnA.classList.add('btn-active'); btnB.classList.remove('btn-active');
+                content.innerHTML = `
+                    <div class="fade-in">
+                        <img src="https://images.unsplash.com/photo-1599423300746-b62533397394?auto=format&fit=crop&w=600" class="rounded-xl mb-4 h-48 w-full object-cover">
+                        <h4 class="font-bold text-xl text-indigo-700">Burg Hohenzollern</h4>
+                        <p class="text-gray-600 mt-2 px-4 text-sm">Eine der imposantesten Festungen Deutschlands mit einem Panoramablick über die Schwäbische Alb.</p>
+                    </div>`;
+            } else {
+                btnB.classList.add('btn-active'); btnA.classList.remove('btn-active');
+                content.innerHTML = `
+                    <div class="fade-in">
+                        <img src="https://images.unsplash.com/photo-1508933554060-da504990d810?auto=format&fit=crop&w=600" class="rounded-xl mb-4 h-48 w-full object-cover">
+                        <h4 class="font-bold text-xl text-indigo-700">Schloss Lichtenstein</h4>
+                        <p class="text-gray-600 mt-2 px-4 text-sm">Das "Märchenschloss Württembergs", das spektakulär auf einem steilen Felsen thront.</p>
+                    </div>`;
+            }
+        }
+    </script>
+</body>
+</html>
