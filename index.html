@@ -21,19 +21,20 @@
         .slide { display: none; animation: fade 1.5s; height: 100%; width: 100%; }
         @keyframes fade { from {opacity: .4} to {opacity: 1} }
 
-        .etappe-line::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #e2e8f0; z-index: 0; }
         .badge-vegan { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-    <header class="hero-bg min-h-[65vh] flex items-center justify-center text-center text-white px-6">
-        <div class="max-w-3xl animate-in fade-in duration-1000">
+    <header class="hero-bg min-h-[60vh] flex items-center justify-center text-center text-white px-6">
+        <div class="max-w-3xl animate-fade-in">
             <i class="fa-solid fa-spa text-6xl mb-6 text-amber-400"></i>
-            <h1 class="text-5xl md:text-7xl mb-6 tracking-tight">Palais Thermal</h1>
-            <p class="text-xl md:text-2xl font-light mb-8 opacity-90">Wellness-Reise ab Innsbruck</p>
-            <div class="glass inline-block px-6 py-3 rounded-full">
-                <p class="text-sm uppercase tracking-widest font-medium"><i class="fa-solid fa-car-side mr-2"></i> Bad Wildbad Experience 2025</p>
+            <h1 class="text-5xl md:text-7xl mb-4 tracking-tight">Palais Thermal</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 opacity-90">Wellness-Auszeit in Bad Wildbad</p>
+            <div class="glass inline-block px-6 py-3 rounded-full border border-white/20">
+                <p class="text-sm uppercase tracking-widest font-medium"><i class="fa-solid fa-car-side mr-2"></i> Reiseplanung ab Innsbruck</p>
             </div>
         </div>
     </header>
@@ -43,30 +44,30 @@
         <section id="tag1">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <div>
-                    <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Anreise-Etappen</span>
+                    <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Der erste Tag</span>
                     <h2 class="text-5xl text-slate-900 mt-2">Tag 1: Anreise</h2>
                 </div>
                 <div class="text-slate-500 text-right text-sm">
-                    <p><i class="fa-solid fa-route mr-2"></i> ca. 310 km Gesamtstrecke</p>
-                    <p><i class="fa-solid fa-clock mr-2"></i> ca. 3 Std. 45 Min. Fahrzeit</p>
+                    <p><i class="fa-solid fa-route mr-2"></i> ca. 310 km</p>
+                    <p><i class="fa-solid fa-clock mr-2"></i> ca. 3h 45min</p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 relative">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 z-10">
-                    <div class="bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 font-bold shadow-lg shadow-amber-200">1</div>
-                    <h3 class="font-bold text-lg mb-2">Innsbruck - Ulm</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Über den Fernpass Richtung Norden. Ulm bietet sich perfekt für eine kurze Pause am Münster an.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-amber-500 text-2xl font-bold mb-4">01</div>
+                    <h3 class="font-bold text-xl mb-2">Innsbruck - Ulm</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Start über den Fernpass. Ulm bietet sich ideal für eine Pause am Münster an.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 z-10">
-                    <div class="bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 font-bold shadow-lg shadow-amber-200">2</div>
-                    <h3 class="font-bold text-lg mb-2">Schwäbische Alb</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Weiter über die A8/A81. Genießen Sie den Aufstieg auf die Alb-Hochebene mit weiten Ausblicken.</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-amber-500 text-2xl font-bold mb-4">02</div>
+                    <h3 class="font-bold text-xl mb-2">Schwäbische Alb</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Fahrt über die Alb-Hochfläche mit weiten Panoramablicken Richtung Pforzheim.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 z-10">
-                    <div class="bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 font-bold shadow-lg shadow-amber-200">3</div>
-                    <h3 class="font-bold text-lg mb-2">Das Enztal</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Die finale Etappe durch dichte Schwarzwaldtannen direkt bis nach Bad Wildbad.</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-amber-500 text-2xl font-bold mb-4">03</div>
+                    <h3 class="font-bold text-xl mb-2">Ankunft Enztal</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Die letzte Etappe führt durch den dichten Schwarzwald bis nach Bad Wildbad.</p>
                 </div>
             </div>
         </section>
@@ -74,67 +75,57 @@
         <section class="space-y-12">
             <div class="text-center space-y-4">
                 <h2 class="text-4xl">Das Erlebnis: Palais Thermal</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto italic">Ein Badetempel wie aus 1001 Nacht – historisch, edel und absolut entspannend.</p>
+                <p class="text-slate-500 max-w-2xl mx-auto italic">Einer der prachtvollsten Badetempel Europas – historisch und einzigartig.</p>
             </div>
 
-            <div class="relative h-[450px] md:h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl bg-slate-200">
-                <div class="slide"><img src="https://images.unsplash.com/photo-1560067174-c5a3a8f37060?auto=format&fit=crop&w=1200" class="w-full h-full object-cover" alt="Luxury Spa Pool"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200" class="w-full h-full object-cover" alt="Oriental Details"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1554460300-914266a7f51e?auto=format&fit=crop&w=1200" class="w-full h-full object-cover" alt="Relax Area"></div>
-                
-                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
-                    <span class="w-2 h-2 bg-white rounded-full"></span>
-                    <span class="w-2 h-2 bg-white/50 rounded-full"></span>
-                    <span class="w-2 h-2 bg-white/50 rounded-full"></span>
-                </div>
+            <div class="relative h-[450px] md:h-[600px] overflow-hidden rounded-[3rem] shadow-2xl bg-slate-200">
+                <div class="slide"><img src="https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Spa 1"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Spa 2"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1554460300-914266a7f51e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Spa 3"></div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <h3 class="text-3xl leading-snug">Historische Pracht & moderne Wellness</h3>
+                    <h3 class="text-3xl">Wellness wie im Märchen</h3>
                     <ul class="space-y-4 text-slate-700">
-                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-3"></i><span><strong>Maurische Badehallen:</strong> Einzigartige Architektur des 19. Jahrhunderts.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-3"></i><span><span><strong>Thermalwasser:</strong> Heilendes Wasser in über 10 verschiedenen Becken.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-3"></i><span><span><strong>Saunawelt:</strong> Panoramablick über Bad Wildbad von der Dachterrasse.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i><span><strong>Maurische Hallen:</strong> Prachtvolle Architektur des 19. Jahrhunderts.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i><span><strong>Thermalpools:</strong> 12 verschiedene Becken mit Heilwasser.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i><span><strong>Panoramasauna:</strong> Saunieren mit Blick über die Stadt.</span></li>
                     </ul>
                 </div>
-                <div class="card-luxury p-8 flex flex-col items-center text-center bg-slate-50">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400" class="w-40 h-40 rounded-full object-cover mb-4 border-8 border-white shadow-xl" alt="Hotel Moknis Facade">
+                <div class="card-luxury p-10 flex flex-col items-center text-center bg-slate-50">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" class="w-44 h-44 rounded-full object-cover mb-6 border-8 border-white shadow-xl" alt="Hotel">
                     <h4 class="text-2xl font-bold mb-2">Hotel Mokni's</h4>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">Ihr exklusiver Rückzugsort mit direktem Bademantelgang in das Palais Thermal.</p>
-                    <a href="https://www.moknis.com/de/" target="_blank" class="bg-slate-900 text-white px-10 py-4 rounded-2xl hover:bg-amber-600 transition-all font-semibold shadow-lg shadow-slate-200">Zur Hotel-Website</a>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">Direkter Bademantelgang in die Therme – exklusiv und komfortabel.</p>
+                    <a href="https://www.moknis.com/de/" target="_blank" class="bg-slate-900 text-white px-10 py-4 rounded-2xl hover:bg-amber-600 transition-all font-semibold">Hotel Website</a>
                 </div>
             </div>
         </section>
 
         <section id="tag2">
             <div class="mb-12">
-                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Entspannung Pur</span>
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Entspannung pur</span>
                 <h2 class="text-5xl text-slate-900 mt-2">Tag 2: Thermentag</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl">Ein ganzer Tag im Zeichen der Erholung. Lassen Sie die Seele im warmen Thermalwasser baumeln.</p>
+                <p class="mt-4 text-slate-500">Ein ganzer Tag im Badetempel. Genießen Sie die Ruhe und die heilende Kraft des Wassers.</p>
             </div>
 
-            <div class="bg-emerald-900 rounded-[3rem] p-10 md:p-16 text-white overflow-hidden relative shadow-2xl">
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="bg-emerald-900 rounded-[3rem] p-10 md:p-16 text-white overflow-hidden shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="badge-vegan inline-block px-4 py-1 rounded-full text-[10px] font-bold mb-4 tracking-widest uppercase">Gastronomie Guide</div>
-                        <h3 class="text-4xl mb-6">Kulinarik & Vegan</h3>
-                        <p class="opacity-80 mb-8 leading-relaxed text-lg">Genießen Sie Ihren Tag ohne Kompromisse. Bad Wildbad bietet hervorragende pflanzliche Optionen:</p>
+                        <div class="badge-vegan inline-block px-4 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-tighter">Information</div>
+                        <h3 class="text-4xl mb-6">Vegane Auswahl</h3>
                         <div class="space-y-6">
                             <div class="flex gap-4">
-                                <div class="bg-white/10 p-4 rounded-2xl"><i class="fa-solid fa-mug-hot text-xl"></i></div>
-                                <div><h4 class="font-bold text-lg">Maurisches Café</h4><p class="text-sm opacity-70 mt-1">Direkt in der Therme. Frische Säfte, vegane Bowls und Gebäck.</p></div>
+                                <div class="bg-white/10 p-4 rounded-2xl"><i class="fa-solid fa-utensils"></i></div>
+                                <div><h4 class="font-bold">Maurisches Café</h4><p class="text-sm opacity-70">Direkt im Palais Thermal: Vegane Bowls und frische Säfte.</p></div>
                             </div>
                             <div class="flex gap-4">
-                                <div class="bg-white/10 p-4 rounded-2xl"><i class="fa-solid fa-leaf text-xl"></i></div>
-                                <div><h4 class="font-bold text-lg">Restaurant Sardis</h4><p class="text-sm opacity-70 mt-1">Mediterrane Küche mit einer großen Auswahl an veganen Antipasti.</p></div>
+                                <div class="bg-white/10 p-4 rounded-2xl"><i class="fa-solid fa-leaf"></i></div>
+                                <div><h4 class="font-bold">Restaurant Sardis</h4><p class="text-sm opacity-70">Mediterrane Köstlichkeiten mit vielen pflanzlichen Optionen.</p></div>
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500" class="rounded-[2rem] rotate-3 shadow-2xl" alt="Healthy Vegan Food">
-                        <img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=500" class="rounded-[2rem] -rotate-3 shadow-2xl" alt="Table Scene">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" class="rounded-[2.5rem] shadow-2xl" alt="Vegan Selection">
                 </div>
             </div>
         </section>
@@ -146,58 +137,48 @@
             </div>
 
             <div class="grid gap-12">
-                <div class="card-luxury p-10 border-t-4 border-indigo-500">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-xl"><i class="fa-solid fa-utensils text-2xl"></i></div>
-                        <h3 class="text-3xl">1. Zwischenstopp: Tübingen</h3>
-                    </div>
+                <div class="card-luxury p-10 border-l-8 border-indigo-500">
+                    <h3 class="text-2xl font-bold mb-6">1. Zwischenstopp: Mittagessen in Tübingen</h3>
                     <div class="flex flex-wrap gap-4 mb-10">
-                        <button onclick="selectStep('food', 'A')" id="btn-food-A" class="px-8 py-3 rounded-full border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option A: Köstlich Vegan</button>
-                        <button onclick="selectStep('food', 'B')" id="btn-food-B" class="px-8 py-3 rounded-full border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option B: Bongoroots</button>
+                        <button onclick="selectOption('food', 'A')" id="btn-food-A" class="px-6 py-3 rounded-xl border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option A: Köstlich Vegan</button>
+                        <button onclick="selectOption('food', 'B')" id="btn-food-B" class="px-6 py-3 rounded-xl border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option B: Bongoroots</button>
                     </div>
-                    <div id="food-content" class="min-h-[120px] bg-slate-50 rounded-3xl p-8 flex items-center justify-center text-slate-400 italic">
-                        Wählen Sie ein Restaurant für das Mittagessen aus...
+                    <div id="food-content" class="min-h-[100px] bg-slate-50 rounded-2xl p-6 flex items-center justify-center text-slate-400 italic">
+                        Wähle eine Option aus...
                     </div>
                 </div>
 
-                <div class="card-luxury p-10 border-t-4 border-indigo-500">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-xl"><i class="fa-solid fa-landmark text-2xl"></i></div>
-                        <h3 class="text-3xl">2. Zwischenstopp: Kultur pur</h3>
-                    </div>
+                <div class="card-luxury p-10 border-l-8 border-indigo-500">
+                    <h3 class="text-2xl font-bold mb-6">2. Zwischenstopp: Kultur pur</h3>
                     <div class="flex flex-wrap gap-4 mb-10">
-                        <button onclick="selectStep('cult', 'A')" id="btn-cult-A" class="px-8 py-3 rounded-full border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option A: Burg Hohenzollern</button>
-                        <button onclick="selectStep('cult', 'B')" id="btn-cult-B" class="px-8 py-3 rounded-full border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option B: Schloss Lichtenstein</button>
+                        <button onclick="selectOption('cult', 'A')" id="btn-cult-A" class="px-6 py-3 rounded-xl border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option A: Burg Hohenzollern</button>
+                        <button onclick="selectOption('cult', 'B')" id="btn-cult-B" class="px-6 py-3 rounded-xl border-2 border-slate-200 hover:border-indigo-500 transition-all font-semibold">Option B: Schloss Lichtenstein</button>
                     </div>
-                    <div id="cult-content" class="min-h-[120px] bg-slate-50 rounded-3xl p-8 flex items-center justify-center text-slate-400 italic">
-                        Wählen Sie eine Sehenswürdigkeit aus...
+                    <div id="cult-content" class="min-h-[100px] bg-slate-50 rounded-2xl p-6 flex items-center justify-center text-slate-400 italic text-center">
+                        Wähle eine Sehenswürdigkeit aus...
                     </div>
                 </div>
 
-                <div class="text-center py-12 border-2 border-dashed border-slate-200 rounded-[3rem]">
-                    <i class="fa-solid fa-house-chimney text-4xl text-slate-300 mb-4"></i>
-                    <h4 class="text-xl font-bold text-slate-800">Rückreise nach Innsbruck</h4>
-                    <p class="text-slate-500 mt-2">Ankunft am Abend mit voller Energie.</p>
+                <div class="text-center py-12 bg-slate-100 rounded-[3rem]">
+                    <h4 class="font-bold text-slate-800 italic">Gute Heimreise nach Innsbruck!</h4>
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        // Automatic Slideshow
-        let slideIx = 0;
-        const slides = document.getElementsByClassName("slide");
+        let sIdx = 0;
         function runSlides() {
+            const slides = document.getElementsByClassName("slide");
             for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-            slideIx++;
-            if (slideIx > slides.length) slideIx = 1;
-            slides[slideIx-1].style.display = "block";
+            sIdx++;
+            if (sIdx > slides.length) sIdx = 1;
+            slides[sIdx-1].style.display = "block";
             setTimeout(runSlides, 4000);
         }
         runSlides();
 
-        // Choice Logic
-        function selectStep(cat, opt) {
+        function selectOption(cat, opt) {
             const content = document.getElementById(`${cat}-content`);
             const btns = document.querySelectorAll(`[id^="btn-${cat}"]`);
             btns.forEach(b => b.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600'));
@@ -205,37 +186,33 @@
 
             if(cat === 'food') {
                 if(opt === 'A') {
-                    content.innerHTML = `
-                    <div class="animate-in slide-in-from-bottom-4 duration-500 w-full text-center">
+                    content.innerHTML = `<div class="animate-fade-in text-center">
                         <h4 class="font-bold text-xl text-slate-900">Köstlich Vegan</h4>
-                        <p class="text-slate-600 mt-2 mb-4 italic">Hausgemachte, rein pflanzliche Küche im Herzen von Tübingen.</p>
-                        <a href="https://maps.app.goo.gl/3ntnP7eS44VbEA8E8?g_st=ic" target="_blank" class="text-indigo-600 font-bold hover:underline"><i class="fa-solid fa-location-dot mr-2"></i>Route zeigen</a>
+                        <p class="text-slate-600 mt-2 mb-4">Hausgemacht, rein pflanzlich & gemütlich.</p>
+                        <a href="https://maps.app.goo.gl/3ntnP7eS44VbEA8E8?g_st=ic" target="_blank" class="text-indigo-600 font-bold underline">Route in Google Maps</a>
                     </div>`;
                 } else {
-                    content.innerHTML = `
-                    <div class="animate-in slide-in-from-bottom-4 duration-500 w-full text-center">
+                    content.innerHTML = `<div class="animate-fade-in text-center">
                         <h4 class="font-bold text-xl text-slate-900">Bongoroots</h4>
-                        <p class="text-slate-600 mt-2 mb-4 italic">Exotische afrikanische Aromen und herzhafte vegane Eintöpfe.</p>
-                        <a href="https://maps.app.goo.gl/KuFsGAoDX4Ga1MW48?g_st=ic" target="_blank" class="text-indigo-600 font-bold hover:underline"><i class="fa-solid fa-location-dot mr-2"></i>Route zeigen</a>
+                        <p class="text-slate-600 mt-2 mb-4">Exotische afrikanische Aromen in Tübingen.</p>
+                        <a href="https://maps.app.goo.gl/KuFsGAoDX4Ga1MW48?g_st=ic" target="_blank" class="text-indigo-600 font-bold underline">Route in Google Maps</a>
                     </div>`;
                 }
             } else {
                 if(opt === 'A') {
-                    content.innerHTML = `
-                    <div class="animate-in slide-in-from-bottom-4 duration-500 w-full flex flex-col md:flex-row items-center gap-6 text-left">
-                        <img src="https://images.unsplash.com/photo-1599423300746-b62533397394?auto=format&fit=crop&w=300" class="w-full md:w-32 h-32 object-cover rounded-2xl shadow-lg">
+                    content.innerHTML = `<div class="animate-fade-in flex flex-col md:flex-row items-center gap-6 text-left w-full">
+                        <img src="https://images.unsplash.com/photo-1627131758661-758a52028637?auto=format&fit=crop&w=400&q=80" class="w-full md:w-32 h-32 object-cover rounded-2xl">
                         <div>
-                            <h4 class="font-bold text-xl text-slate-900">Burg Hohenzollern</h4>
-                            <p class="text-slate-600 mt-1">Stammsitz des preußischen Königshauses mit atemberaubendem Rundblick über die Alb.</p>
+                            <h4 class="font-bold text-xl">Burg Hohenzollern</h4>
+                            <p class="text-slate-600">Stammsitz der preußischen Könige mit Weltruf.</p>
                         </div>
                     </div>`;
                 } else {
-                    content.innerHTML = `
-                    <div class="animate-in slide-in-from-bottom-4 duration-500 w-full flex flex-col md:flex-row items-center gap-6 text-left">
-                        <img src="https://images.unsplash.com/photo-1508933554060-da504990d810?auto=format&fit=crop&w=300" class="w-full md:w-32 h-32 object-cover rounded-2xl shadow-lg">
+                    content.innerHTML = `<div class="animate-fade-in flex flex-col md:flex-row items-center gap-6 text-left w-full">
+                        <img src="https://images.unsplash.com/photo-1597401323321-4f46924840e4?auto=format&fit=crop&w=400&q=80" class="w-full md:w-32 h-32 object-cover rounded-2xl">
                         <div>
-                            <h4 class="font-bold text-xl text-slate-900">Schloss Lichtenstein</h4>
-                            <p class="text-slate-600 mt-1">Das "Märchenschloss Württembergs", spektakulär auf einem Felsen über dem Tal gelegen.</p>
+                            <h4 class="font-bold text-xl">Schloss Lichtenstein</h4>
+                            <p class="text-slate-600">Das spektakuläre "Märchenschloss Württembergs".</p>
                         </div>
                     </div>`;
                 }
