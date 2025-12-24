@@ -40,7 +40,7 @@
             <span class="text-gray-300">|</span>
             <a href="#journey" class="hover:text-[#c2a35d] transition">Anreise</a>
             <span class="text-gray-300">|</span>
-            <a href="#experience" class="hover:text-[#c2a35d] transition">Experience</a>
+            <a href="#experience" class="hover:text-[#c2a35d] transition">Therme</a>
             <span class="text-gray-300">|</span>
             <a href="#return" class="hover:text-[#c2a35d] transition">Rückreise</a>
         </div>
@@ -64,7 +64,7 @@
 
     <section id="journey" class="min-h-screen bg-slate-50 flex flex-col justify-center py-20 relative">
         <div class="max-w-7xl mx-auto px-6 w-full">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
                 <div class="reveal">
                     <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Tag 1</span>
                     <h2 class="text-5xl md:text-6xl text-slate-900 mt-2 mb-8 font-medium">Die Anreise</h2>
@@ -72,7 +72,7 @@
                         Eine Fahrt durch wechselnde Landschaften. Vom alpinen Tirol über das flache Alpenvorland bis tief hinein in die mystischen Wälder des Nordschwarzwalds.
                     </p>
                     
-                    <div class="space-y-8 border-l-2 border-slate-200 pl-8 ml-2 relative">
+                    <div class="space-y-8 border-l-2 border-slate-200 pl-8 ml-2 relative mb-12">
                         <div class="relative">
                             <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-slate-900 border-4 border-slate-50"></div>
                             <h3 class="font-bold text-lg">Start in Innsbruck</h3>
@@ -86,12 +86,35 @@
                         <div class="relative">
                             <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-slate-900 border-4 border-slate-50"></div>
                             <h3 class="font-bold text-lg">Ankunft Bad Wildbad</h3>
-                            <p class="text-sm text-slate-500">Check-In Hotel Mokni's | ~310 km</p>
+                            <p class="text-sm text-slate-500">Zielerreichung im Schwarzwald | ~310 km</p>
                         </div>
                     </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 reveal delay-100">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Check-In</span>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="ml-1 text-slate-400 font-semibold text-xs">S</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Mokni's Palais Hotel & Spa</h3>
+                        <p class="text-slate-600 mb-4">
+                            Direkt am Kurplatz gelegen. Wir beziehen die Zimmer im historischen Rossini-Gebäude oder im modernen Anbau.
+                        </p>
+                        <div class="flex items-start gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                            <i class="fa-solid fa-info-circle text-amber-600 mt-1"></i>
+                            <div>
+                                <strong class="block text-amber-900 text-sm mb-1">Agenda für heute Nachmittag:</strong>
+                                <p class="text-amber-800 text-sm">
+                                    Badesachen bereithalten! Der erste <strong>Thermenbesuch</strong> ist direkt nach Ankunft geplant. Zugang erfolgt bequem über den Bademantelgang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="relative h-[500px] rounded-[3rem] overflow-hidden shadow-2xl reveal delay-200 group">
+                <div class="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl reveal delay-200 group sticky top-10">
                     <iframe class="w-full h-full grayscale group-hover:grayscale-0 transition duration-700" src="https://maps.google.com/maps?q=Innsbruck+to+Bad+Wildbad&t=&z=7&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
                     <div class="absolute bottom-6 right-6 bg-white px-6 py-3 rounded-xl shadow-lg">
                         <p class="font-mono text-sm font-bold">3h 45min <span class="text-slate-400 font-normal">Fahrzeit</span></p>
@@ -108,6 +131,9 @@
             <div class="text-center mb-20 reveal">
                 <h2 class="text-5xl md:text-7xl mb-6">Palais Thermal</h2>
                 <p class="text-xl text-slate-300 font-light max-w-2xl mx-auto">"Eines der schönsten Bäder Europas." – Rossini</p>
+                <div class="mt-8 inline-block border border-amber-500/50 rounded-full px-6 py-2 text-amber-400 text-sm tracking-widest uppercase">
+                    Tempel der Wellness
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
@@ -116,17 +142,17 @@
                     <img src="https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
                     <div class="absolute bottom-0 left-0 p-10 bg-gradient-to-t from-black/90 to-transparent w-full">
                         <h3 class="text-3xl font-bold mb-2">Die Maurische Halle</h3>
-                        <p class="text-slate-300 text-sm max-w-md">Erbaut 1847. Tauchen Sie ein in 12 Thermalbecken (32-38°C) in einer Architektur, die Könige begeisterte.</p>
+                        <p class="text-slate-300 text-sm max-w-md">Erbaut 1847 als "Graf-Eberhard-Bad". Tauchen Sie ein in eine Architektur aus 1001 Nacht, die Könige und Fürsten begeisterte.</p>
                     </div>
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-3xl border border-white/5 flex flex-col justify-center reveal delay-100 hover:bg-slate-700 transition">
-                    <i class="fa-solid fa-hotel text-4xl text-amber-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Hotel Mokni's</h3>
+                    <i class="fa-solid fa-water text-4xl text-amber-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">12 Thermalbecken</h3>
                     <ul class="space-y-4 text-slate-300 text-sm">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Bademantelgang zur Therme</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> 4-Sterne Superior</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Direkt an der Enz</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> 32°C bis 38°C</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Massagedüsen & Sprudel</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Heilwasser aus der Tiefe</li>
                     </ul>
                 </div>
 
@@ -141,30 +167,58 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white relative">
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-slate-900 to-transparent opacity-10"></div>
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div class="order-2 md:order-1 reveal">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" class="rounded-[2rem] shadow-2xl rotate-2 z-10 relative">
-                        <div class="absolute top-10 -left-10 w-full h-full bg-emerald-100 rounded-[2rem] -z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=800&q=80" class="rounded-[2rem] shadow-2xl -rotate-2 z-10 relative object-cover h-[500px] w-full">
+                        <div class="absolute bottom-10 -right-10 w-2/3 h-2/3 bg-amber-100 rounded-[2rem] -z-0"></div>
                     </div>
                 </div>
                 <div class="order-1 md:order-2 reveal">
-                    <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Tag 2</span>
-                    <h2 class="text-5xl text-slate-900 mt-2 mb-8">Kulinarik & Wellness</h2>
+                    <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Tag 2</span>
+                    <h2 class="text-5xl text-slate-900 mt-2 mb-8">Saunawelt & Panorama</h2>
                     <p class="text-slate-600 mb-8 leading-relaxed">
-                        Ein Tag ohne Kompromisse. Während Sie zwischen der Panoramasauna und den Fürstenbädern pendeln, sorgt Bad Wildbad für das leibliche Wohl.
+                        Heute widmen wir uns ganz der Entspannung. Das Palais Thermal bietet eine einzigartige Saunalandschaft, die sich bis auf das Dach erstreckt.
                     </p>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h4 class="font-bold text-slate-900 mb-2">Maurisches Café</h4>
-                            <p class="text-xs text-slate-500">Direkt in der Therme. Vegane Bowls, frische Säfte & Arabischer Mokka.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Die Saunalandschaft</h4>
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Vom historischen Bereich bis zum modernen Panoramadeck. Erleben Sie thematische Aufgüsse und textilfreies Baden in historischem Ambiente.
+                                </p>
+                            </div>
                         </div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h4 class="font-bold text-slate-900 mb-2">Sardis Restaurant</h4>
-                            <p class="text-xs text-slate-500">Abendessen. Hochwertige mediterrane Küche mit veganer Antipasti-Vielfalt.</p>
+                        
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Sky-Pool & Ausblick</h4>
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Auf dem Panoramadeck wartet der Außenpool mit Blick über Bad Wildbad und den Schwarzwald. Der perfekte Ort, um die Seele baumeln zu lassen.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Fürstenbäder</h4>
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Die historischen Fürstenbäder bieten Rückzugsorte für besondere Ruhe in königlicher Atmosphäre.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,10 +243,14 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-100 cursor-pointer">
+                    <a href="https://www.koestlich-vegan.de/" target="_blank" class="block group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-100">
                         <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Vegan Food">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
                         
+                        <div class="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
                         <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                             <span class="inline-block px-3 py-1 bg-green-500/20 text-green-300 text-xs font-bold rounded-full border border-green-500/30 mb-3 backdrop-blur-md">Option A</span>
                             <h4 class="text-3xl font-bold text-white mb-2 font-serif">Köstlich Vegan</h4>
@@ -202,11 +260,15 @@
                                 <span><i class="fa-solid fa-euro-sign text-amber-400 mr-1"></i> Mittel</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-200 cursor-pointer">
+                    <a href="https://www.bongoroots.de/" target="_blank" class="block group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-200">
                         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="African Food">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
+                        
+                        <div class="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
                         
                         <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                             <span class="inline-block px-3 py-1 bg-orange-500/20 text-orange-300 text-xs font-bold rounded-full border border-orange-500/30 mb-3 backdrop-blur-md">Option B</span>
@@ -217,7 +279,7 @@
                                 <span><i class="fa-solid fa-euro-sign text-amber-400 mr-1"></i> Mittel</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -229,10 +291,14 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-100 cursor-pointer border border-slate-200">
+                    <a href="https://www.burg-hohenzollern.com/" target="_blank" class="block group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-100 border border-slate-200">
                         <img src="https://images.unsplash.com/photo-1599423300746-b62533397394?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Burg Hohenzollern">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-90"></div>
                         
+                        <div class="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
                         <div class="absolute bottom-0 left-0 p-10 w-full">
                             <div class="mb-4">
                                 <span class="bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Der Klassiker</span>
@@ -252,11 +318,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-200 cursor-pointer border border-slate-200">
+                    <a href="https://www.schloss-lichtenstein.de/" target="_blank" class="block group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-200 border border-slate-200">
                         <img src="https://images.unsplash.com/photo-1597401323321-4f46924840e4?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Schloss Lichtenstein">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-90"></div>
+
+                        <div class="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
 
                         <div class="absolute bottom-0 left-0 p-10 w-full">
                             <div class="mb-4">
@@ -277,7 +347,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -301,12 +371,13 @@
 
         </div>
     </section>
+
     <footer class="bg-white py-12 text-center border-t border-slate-100">
         <p class="text-slate-300 text-xs tracking-widest font-medium uppercase">Exklusiv erstellt für Ihre Reise</p>
     </footer>
 
     <script>
-        // Scroll Reveal Script using IntersectionObserver
+        // Scroll Reveal Script
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -324,9 +395,6 @@
         document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
-
-        // Die alte Funktion "setRoute" wird nicht mehr benötigt, 
-        // da wir jetzt alle Optionen als visuelles Grid anzeigen.
     </script>
 </body>
 </html>
