@@ -72,7 +72,7 @@
                         Eine Fahrt durch wechselnde Landschaften. Vom alpinen Tirol über das flache Alpenvorland bis tief hinein in die mystischen Wälder des Nordschwarzwalds.
                     </p>
                     
-                    <div class="space-y-8 border-l-2 border-slate-200 pl-8 ml-2 relative mb-12">
+                    <div class="space-y-8 border-l-2 border-slate-200 pl-8 ml-2 relative mb-16">
                         <div class="relative">
                             <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-slate-900 border-4 border-slate-50"></div>
                             <h3 class="font-bold text-lg">Start in Innsbruck</h3>
@@ -90,29 +90,38 @@
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 reveal delay-100">
-                        <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-slate-100 reveal delay-100 relative z-20">
+                        <div class="absolute -top-6 right-10 bg-amber-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">Unser Basecamp</div>
+                        
+                        <div class="flex items-center gap-4 mb-6">
                             <span class="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Check-In</span>
-                            <div class="flex text-amber-400 text-sm">
+                            <div class="flex text-amber-400 text-base">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="ml-1 text-slate-400 font-semibold text-xs">S</span>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-2">Mokni's Palais Hotel & Spa</h3>
-                        <p class="text-slate-600 mb-4">
-                            Direkt am Kurplatz gelegen. Wir beziehen die Zimmer im historischen Rossini-Gebäude oder im modernen Anbau.
+                        
+                        <h3 class="text-3xl font-bold mb-4 font-serif text-slate-900">Mokni's Palais Hotel & Spa</h3>
+                        <p class="text-slate-600 mb-8 text-lg leading-relaxed">
+                            Direkt am Kurplatz gelegen. Wir beziehen die Zimmer im historischen Rossini-Gebäude oder im modernen Anbau. Luxus trifft auf Geschichte.
                         </p>
                         
-                        <div class="grid grid-cols-3 gap-2 mb-4">
-                            <img src="Wochenende Schwarzwald.webp" class="w-full h-20 object-cover rounded-xl" alt="Hotelzimmer">
-                            <img src="Kurplatz-Bad-Wildbad-Rossini-Badhotel-Palais-Thermal.jpg" class="w-full h-20 object-cover rounded-xl" alt="Hotel Außenansicht">
-                            <img src="download.jpeg" class="w-full h-20 object-cover rounded-xl" alt="Hotel Detail">
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="h-32 md:h-40 rounded-2xl overflow-hidden shadow-md">
+                                <img src="Wochenende Schwarzwald.webp" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Hotelzimmer">
+                            </div>
+                            <div class="h-32 md:h-40 rounded-2xl overflow-hidden shadow-md">
+                                <img src="Kurplatz-Bad-Wildbad-Rossini-Badhotel-Palais-Thermal.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Hotel Außenansicht">
+                            </div>
+                            <div class="h-32 md:h-40 rounded-2xl overflow-hidden shadow-md">
+                                <img src="download.jpeg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Hotel Detail">
+                            </div>
                         </div>
 
-                        <div class="flex items-start gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100">
-                            <i class="fa-solid fa-info-circle text-amber-600 mt-1"></i>
+                        <div class="flex items-start gap-4 p-6 bg-amber-50 rounded-2xl border border-amber-100">
+                            <i class="fa-solid fa-info-circle text-amber-600 mt-1 text-xl"></i>
                             <div>
-                                <strong class="block text-amber-900 text-sm mb-1">Agenda für heute Nachmittag:</strong>
-                                <p class="text-amber-800 text-sm">
+                                <strong class="block text-amber-900 font-bold mb-1">Agenda für heute Nachmittag:</strong>
+                                <p class="text-amber-800">
                                     Badesachen bereithalten! Der erste <strong>Thermenbesuch</strong> ist direkt nach Ankunft geplant. Zugang erfolgt bequem über den Bademantelgang.
                                 </p>
                             </div>
@@ -136,14 +145,15 @@
 
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20 reveal">
-                <h2 class="text-5xl md:text-7xl mb-6">Palais Thermal</h2>
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-xs border border-amber-500/30 px-4 py-1 rounded-full">Tag 2</span>
+                <h2 class="text-5xl md:text-7xl mb-6 mt-6">Palais Thermal</h2>
                 <p class="text-xl text-slate-300 font-light max-w-2xl mx-auto">"Eines der schönsten Bäder Europas." – Rossini</p>
-                <div class="mt-8 inline-block border border-amber-500/50 rounded-full px-6 py-2 text-amber-400 text-sm tracking-widest uppercase">
-                    Tempel der Wellness
+                <div class="mt-8 inline-block border-b border-amber-500/30 pb-1 text-amber-400 text-sm tracking-widest uppercase">
+                    Ein Tag der Entspannung
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px] mb-12">
                 
                 <div class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group reveal">
                     <img src="palais-thermal-maurische-halle-jpg.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
@@ -166,70 +176,49 @@
                 <div class="relative rounded-3xl overflow-hidden group reveal delay-200">
                     <img src="slide-badelandschaft-1.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <span class="border border-white px-6 py-2 rounded-full text-sm tracking-widest uppercase">Panoramasauna</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white relative">
-        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-slate-900 to-transparent opacity-10"></div>
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="order-2 md:order-1 reveal">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=800&q=80" class="rounded-[2rem] shadow-2xl -rotate-2 z-10 relative object-cover h-[500px] w-full">
-                        <div class="absolute bottom-10 -right-10 w-2/3 h-2/3 bg-amber-100 rounded-[2rem] -z-0"></div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2 reveal">
-                    <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Tag 2</span>
-                    <h2 class="text-5xl text-slate-900 mt-2 mb-8">Saunawelt & Panorama</h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        Heute widmen wir uns ganz der Entspannung. Das Palais Thermal bietet eine einzigartige Saunalandschaft, die sich bis auf das Dach erstreckt.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex gap-6 items-start">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
-                                <i class="fa-solid fa-wind"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-lg">Die Saunalandschaft</h4>
-                                <p class="text-slate-500 text-sm mt-1">
-                                    Vom historischen Bereich bis zum modernen Panoramadeck. Erleben Sie thematische Aufgüsse und textilfreies Baden in historischem Ambiente.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-6 items-start">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
-                                <i class="fa-solid fa-mountain-sun"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-lg">Sky-Pool & Ausblick</h4>
-                                <p class="text-slate-500 text-sm mt-1">
-                                    Auf dem Panoramadeck wartet der Außenpool mit Blick über Bad Wildbad und den Schwarzwald. Der perfekte Ort, um die Seele baumeln zu lassen.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-6 items-start">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-amber-600 text-xl">
-                                <i class="fa-solid fa-crown"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-lg">Fürstenbäder</h4>
-                                <p class="text-slate-500 text-sm mt-1">
-                                    Die historischen Fürstenbäder bieten Rückzugsorte für besondere Ruhe in königlicher Atmosphäre.
-                                </p>
-                            </div>
-                        </div>
+                        <span class="border border-white px-6 py-2 rounded-full text-sm tracking-widest uppercase">Saunawelt</span>
                     </div>
                 </div>
             </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16 border-t border-white/10 pt-16 reveal">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 text-xl border border-white/10">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Die Saunalandschaft</h4>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Vom historischen Bereich bis zum modernen Panoramadeck. Erleben Sie thematische Aufgüsse und textilfreies Baden in historischem Ambiente.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 text-xl border border-white/10">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Sky-Pool & Ausblick</h4>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Auf dem Panoramadeck wartet der Außenpool mit Blick über Bad Wildbad und den Schwarzwald. Der perfekte Ort, um die Seele baumeln zu lassen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 text-xl border border-white/10">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Fürstenbäder</h4>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Die historischen Fürstenbäder bieten Rückzugsorte für besondere Ruhe in königlicher Atmosphäre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
