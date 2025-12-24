@@ -179,7 +179,7 @@
                 <h2 class="text-5xl text-slate-900 mt-2">Wähle deine Route</h2>
             </div>
 
-            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden reveal delay-100">
+            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden reveal delay-100 mb-8">
                 <div class="grid md:grid-cols-2">
                     
                     <div class="p-10 md:p-14 flex flex-col justify-center">
@@ -204,7 +204,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-slate-900 p-10 md:p-14 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="bg-slate-900 p-10 md:p-14 text-white flex flex-col justify-between relative overflow-hidden h-[500px] md:h-auto">
                         <div id="dynamic-bg" class="absolute inset-0 opacity-20 bg-cover bg-center transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1599423300746-b62533397394?auto=format&fit=crop&w=800&q=80');"></div>
                         
                         <div class="relative z-10">
@@ -232,8 +232,26 @@
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 reveal">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 1</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Wildbad → Tübingen</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~60 km | 1:00h</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 2</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Tübingen → Alb</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~30 km | 0:35h</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 3</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Alb → Innsbruck</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~255 km | 2:45h</p>
+                </div>
+            </div>
             
-            <div class="mt-12 rounded-3xl overflow-hidden h-64 border border-slate-200 shadow-lg reveal">
+            <div class="rounded-3xl overflow-hidden h-64 border border-slate-200 shadow-lg reveal">
                  <iframe class="w-full h-full grayscale hover:grayscale-0 transition duration-500" src="https://maps.google.com/maps?q=Bad+Wildbad+to+Tübingen+to+Burg+Hohenzollern+to+Innsbruck&t=&z=7&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
             </div>
 
