@@ -1,416 +1,139 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reise Portfolio</title>
+    <title>Palais Thermal - The Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* --- GRUNDLEGENDE STYLES & RESET --- */
-        :root {
-            --bg-color: #000000;
-            --card-bg: #1c1c1e;
-            --text-main: #f5f5f7;
-            --text-muted: #86868b;
-            --accent-color: #0071e3;
-            --gap: 20px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
-
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: var(--text-main); }
-
-        /* --- HERO SECTION --- */
-        header {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #2a2a2a 0%, #000 100%);
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 10px;
-            background: linear-gradient(180deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p { font-size: 1.5rem; color: var(--text-muted); }
-
-        /* --- ALLGEMEINE SECTION STYLES --- */
-        section { padding: 80px 20px; }
+        :root { --accent: #c2a35d; --dark: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; color: #1e293b; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         
-        .content-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* Utility Classes */
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .glass-dark { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); color: white; }
+        
+        /* Scroll Animations */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Parallax Backgrounds */
+        .parallax-section { background-attachment: fixed; background-position: center; background-size: cover; background-repeat: no-repeat; }
+        
+        /* Hide Scrollbar for clean look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #c2a35d; border-radius: 4px; }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 50px;
-            font-weight: 400;
-        }
-
-        /* --- PLATZHALTER FÜR ANDERE SECTIONS (Damit das Layout komplett ist) --- */
-        .simple-card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .simple-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* =========================================
-           NEUE RÜCKREISE SECTION (Bento Grid)
-           ========================================= */
-
-        /* Das Bento Grid System */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            auto-rows: minmax(350px, auto); /* Mindesthöhe der Karten */
-        }
-
-        /* Die Karten Basis */
-        .bento-card {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            background: var(--card-bg);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .bento-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            z-index: 2;
-        }
-
-        /* Featured Karten (Burgen) nehmen 2 Spalten ein wenn Platz ist */
-        @media (min-width: 768px) {
-            .bento-card.featured {
-                grid-column: span 2;
-                min-height: 450px;
-            }
-        }
-
-        /* Bilder Management */
-        .card-image-wrapper {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-
-        .card-bg-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .bento-card:hover .card-bg-img {
-            transform: scale(1.05); /* Subtiler Zoom Effekt */
-        }
-
-        /* Style A: Overlay für große Karten (Text im Bild) */
-        .card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 40px;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
-            z-index: 1;
-            display: flex;
-            align-items: flex-end;
-            height: 100%;
-            pointer-events: none; /* Klicks gehen durch */
-        }
-
-        /* Style B: Glass Pane für Restaurants (Text unten angedockt) */
-        .bento-card.restaurant .card-image-wrapper {
-            height: 60%; /* Bild nimmt nur oberen Teil ein */
-            position: relative;
-        }
-
-        .card-content-glass {
-            height: 40%;
-            background: rgba(40, 40, 40, 0.6); /* Semi-transparent */
-            backdrop-filter: blur(20px); /* Apple Blur Effekt */
-            -webkit-backdrop-filter: blur(20px);
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            z-index: 1;
-        }
-
-        /* Typografie und Details */
-        .card-info h3, .card-content-glass h3 {
-            font-size: 1.5rem;
-            color: #fff;
-            margin: 8px 0;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .card-info p, .card-content-glass p {
-            font-size: 0.95rem;
-            color: #ccc;
-            line-height: 1.4;
-            margin: 0;
-        }
-
-        /* Tags (Label oben) */
-        .meta-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .tag.history {
-            background: rgba(255, 215, 0, 0.2);
-            color: #ffd700;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .tag.food {
-            background: rgba(52, 199, 89, 0.2); /* Apple Green */
-            color: #34c759;
-            border: 1px solid rgba(52, 199, 89, 0.3);
-        }
-
-        .tag.kultur {
-            background: rgba(10, 132, 255, 0.2); /* Apple Blue */
-            color: #0a84ff;
-            border: 1px solid rgba(10, 132, 255, 0.3);
-        }
-
-        .price {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 50px;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+        /* Custom Selection Color */
+        ::selection { background: #c2a35d; color: white; }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Reise 2025</div>
-            <div class="nav-links">
-                <a href="#hinfahrt">Hinfahrt</a>
-                <a href="#unterkunft">Unterkunft</a>
-                <a href="#aktivitaeten">Aktivitäten</a>
-                <a href="#rueckreise">Rückreise</a>
-            </div>
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <div class="glass px-6 py-3 rounded-full shadow-2xl flex space-x-6 text-sm font-medium tracking-wide border border-white/50">
+            <a href="#start" class="hover:text-[#c2a35d] transition">Start</a>
+            <span class="text-gray-300">|</span>
+            <a href="#journey" class="hover:text-[#c2a35d] transition">Anreise</a>
+            <span class="text-gray-300">|</span>
+            <a href="#experience" class="hover:text-[#c2a35d] transition">Experience</a>
+            <span class="text-gray-300">|</span>
+            <a href="#return" class="hover:text-[#c2a35d] transition">Rückreise</a>
         </div>
     </nav>
 
-    <header>
-        <div>
-            <h1>Das Abenteuer</h1>
-            <p>Ein unvergesslicher Roadtrip durch die Alpen.</p>
+    <header id="start" class="relative h-screen w-full overflow-hidden flex items-center justify-center parallax-section" 
+            style="background-image: url('https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&w=2000&q=90');">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/20 to-slate-900/80"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 reveal active">
+            <p class="text-xs md:text-sm uppercase tracking-[0.3em] mb-6 text-amber-200">Reiseplan 2026</p>
+            <h1 class="text-6xl md:text-9xl mb-6 tracking-tight leading-none drop-shadow-2xl">Palais<br><span class="italic font-light opacity-90">Thermal</span></h1>
+            <div class="h-1 w-24 bg-amber-400 mx-auto mb-8 rounded-full"></div>
+            <p class="text-lg md:text-2xl font-light opacity-90 max-w-xl mx-auto">Innsbruck — Bad Wildbad</p>
+        </div>
+
+        <div class="absolute bottom-10 left-0 right-0 text-center animate-bounce">
+            <i class="fa-solid fa-chevron-down text-white/50 text-2xl"></i>
         </div>
     </header>
 
-    <section id="hinfahrt">
-        <div class="content-wrapper">
-            <h2 class="section-title">Die Hinfahrt</h2>
-            <p class="section-subtitle">Der Weg ist das Ziel.</p>
-            <div class="simple-card-grid">
-                <div class="simple-card"><h3>Route A</h3><p>Über den Fernpass mit Panoramablick.</p></div>
-                <div class="simple-card"><h3>Zwischenstopp</h3><p>Kurze Pause am Blindsee.</p></div>
-                <div class="simple-card"><h3>Ankunft</h3><p>Check-in und Welcome Drink.</p></div>
+    <section id="journey" class="min-h-screen bg-slate-50 flex flex-col justify-center py-20 relative">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Tag 1</span>
+                    <h2 class="text-5xl md:text-6xl text-slate-900 mt-2 mb-8 font-medium">Die Anreise</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-10">
+                        Eine Fahrt durch wechselnde Landschaften. Vom alpinen Tirol über das flache Alpenvorland bis tief hinein in die mystischen Wälder des Nordschwarzwalds.
+                    </p>
+                    
+                    <div class="space-y-8 border-l-2 border-slate-200 pl-8 ml-2 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-slate-900 border-4 border-slate-50"></div>
+                            <h3 class="font-bold text-lg">Start in Innsbruck</h3>
+                            <p class="text-sm text-slate-500">Abfahrt am Morgen | 0 km</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-amber-400 border-4 border-slate-50"></div>
+                            <h3 class="font-bold text-lg">Münsterblick Ulm</h3>
+                            <p class="text-sm text-slate-500">Ideal für Lunch & Kultur | ~165 km</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-slate-900 border-4 border-slate-50"></div>
+                            <h3 class="font-bold text-lg">Ankunft Bad Wildbad</h3>
+                            <p class="text-sm text-slate-500">Check-In Hotel Mokni's | ~310 km</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-[500px] rounded-[3rem] overflow-hidden shadow-2xl reveal delay-200 group">
+                    <iframe class="w-full h-full grayscale group-hover:grayscale-0 transition duration-700" src="https://maps.google.com/maps?q=Innsbruck+to+Bad+Wildbad&t=&z=7&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                    <div class="absolute bottom-6 right-6 bg-white px-6 py-3 rounded-xl shadow-lg">
+                        <p class="font-mono text-sm font-bold">3h 45min <span class="text-slate-400 font-normal">Fahrzeit</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="unterkunft">
-        <div class="content-wrapper">
-            <h2 class="section-title">Die Unterkunft</h2>
-            <p class="section-subtitle">Entspannung pur in modernem Ambiente.</p>
-            <div class="simple-card-grid">
-                <div class="simple-card"><h3>Das Hotel</h3><p>Moderne Architektur trifft Natur.</p></div>
-                <div class="simple-card"><h3>Spa & Wellness</h3><p>Infinity Pool und Sauna Bereich.</p></div>
+    <section id="experience" class="bg-slate-900 text-white py-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-5xl md:text-7xl mb-6">Palais Thermal</h2>
+                <p class="text-xl text-slate-300 font-light max-w-2xl mx-auto">"Eines der schönsten Bäder Europas." – Rossini</p>
             </div>
-        </div>
-    </section>
 
-    <section id="aktivitaeten">
-        <div class="content-wrapper">
-            <h2 class="section-title">Aktivitäten</h2>
-            <p class="section-subtitle">Abenteuer in den Bergen.</p>
-            <div class="simple-card-grid">
-                <div class="simple-card"><h3>Wandern</h3><p>Gipfeltour zur Spitze.</p></div>
-                <div class="simple-card"><h3>See</h3><p>Bootsfahrt und Schwimmen.</p></div>
-                <div class="simple-card"><h3>Stadtbummel</h3><p>Shopping und Kultur.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="rueckreise">
-        <div class="content-wrapper">
-            <h2 class="section-title">Die Rückreise</h2>
-            <p class="section-subtitle">Kulinarik & Geschichte auf dem Weg nach Hause</p>
-
-            <div class="bento-grid">
-
-                <div class="bento-card featured">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/1200x800/2c2c2c/FFF?text=Foto+Burg+Ehrenberg" alt="Burg Ehrenberg" class="card-bg-img">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-info">
-                            <span class="tag history">Historisch</span>
-                            <h3>Burgruine Ehrenberg & Highline179</h3>
-                            <p>Eine spektakuläre Kombination aus mittelalterlicher Festung und der längsten Fußgängerhängebrücke im Tibet-Style. Perfekt für einen beeindruckenden Zwischenstopp.</p>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
+                
+                <div class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group reveal">
+                    <img src="https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 p-10 bg-gradient-to-t from-black/90 to-transparent w-full">
+                        <h3 class="text-3xl font-bold mb-2">Die Maurische Halle</h3>
+                        <p class="text-slate-300 text-sm max-w-md">Erbaut 1847. Tauchen Sie ein in 12 Thermalbecken (32-38°C) in einer Architektur, die Könige begeisterte.</p>
                     </div>
                 </div>
 
-                <div class="bento-card featured">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/1200x800/3c3c3c/FFF?text=Foto+Schloss+Neuschwanstein" alt="Schloss Neuschwanstein" class="card-bg-img">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-info">
-                            <span class="tag kultur">Kultur</span>
-                            <h3>Schloss Neuschwanstein (Blick)</h3>
-                            <p>Der Märchenkönig wartet. Auch wenn wir nur vorbeifahren oder kurz halten, bietet der Blick auf dieses architektonische Meisterwerk die perfekte Fotokulisse.</p>
-                        </div>
-                    </div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-white/5 flex flex-col justify-center reveal delay-100 hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-hotel text-4xl text-amber-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Hotel Mokni's</h3>
+                    <ul class="space-y-4 text-slate-300 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Bademantelgang zur Therme</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> 4-Sterne Superior</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Direkt an der Enz</li>
+                    </ul>
                 </div>
 
-                <div class="bento-card restaurant">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/800x800/1a1a1a/FFF?text=Restaurant+Alpenblick" alt="Gasthof Alpenblick" class="card-bg-img">
-                    </div>
-                    <div class="card-content-glass">
-                        <div class="meta-header">
-                            <span class="tag food">Tiroler Küche</span>
-                            <span class="price">€€</span>
-                        </div>
-                        <h3>Gasthof Alpenblick</h3>
-                        <p>Traditionelle Küche mit Panoramablick. Bekannt für die besten Käsespätzle der Region.</p>
-                    </div>
-                </div>
-
-                <div class="bento-card restaurant">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/800x800/222/FFF?text=Restaurant+Seeseite" alt="Restaurant Seeseite" class="card-bg-img">
-                    </div>
-                    <div class="card-content-glass">
-                        <div class="meta-header">
-                            <span class="tag food">Modern & Fisch</span>
-                            <span class="price">€€€</span>
-                        </div>
-                        <h3>Restaurant Seeseite</h3>
-                        <p>Direkt am Wasser gelegen. Exquisites Ambiente, frischer Fisch und eine moderne Weinkarte.</p>
-                    </div>
-                </div>
-
-                <div class="bento-card restaurant">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/800x800/333/FFF?text=Pizzeria+Da+Vinci" alt="Pizzeria Da Vinci" class="card-bg-img">
-                    </div>
-                    <div class="card-content-glass">
-                        <div class="meta-header">
-                            <span class="tag food">Italienisch</span>
-                            <span class="price">€€</span>
-                        </div>
-                        <h3>Trattoria Da Vinci</h3>
-                        <p>Ein schnelles, aber hochwertiges Stück Italien auf dem Weg. Echte Steinofenpizza.</p>
+                <div class="relative rounded-3xl overflow-hidden group reveal delay-200">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                        <span class="border border-white px-6 py-2 rounded-full text-sm tracking-widest uppercase">Panoramasauna</span>
                     </div>
                 </div>
 
@@ -418,9 +141,192 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Roadtrip Collection. Designed for Friends.</p>
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" class="rounded-[2rem] shadow-2xl rotate-2 z-10 relative">
+                        <div class="absolute top-10 -left-10 w-full h-full bg-emerald-100 rounded-[2rem] -z-0"></div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Tag 2</span>
+                    <h2 class="text-5xl text-slate-900 mt-2 mb-8">Kulinarik & Wellness</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Ein Tag ohne Kompromisse. Während Sie zwischen der Panoramasauna und den Fürstenbädern pendeln, sorgt Bad Wildbad für das leibliche Wohl.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2">Maurisches Café</h4>
+                            <p class="text-xs text-slate-500">Direkt in der Therme. Vegane Bowls, frische Säfte & Arabischer Mokka.</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2">Sardis Restaurant</h4>
+                            <p class="text-xs text-slate-500">Abendessen. Hochwertige mediterrane Küche mit veganer Antipasti-Vielfalt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="return" class="min-h-screen bg-slate-100 py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center mb-16 reveal">
+                <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs">Der Heimweg</span>
+                <h2 class="text-5xl text-slate-900 mt-2">Highlights der Rückreise</h2>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto">Gestalten wir den Weg nach Hause genauso eindrucksvoll wie das Ziel selbst. Hier sind die besten Optionen für Kulinarik und Kultur.</p>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8 reveal">
+                    <div class="h-px bg-slate-300 flex-1"></div>
+                    <h3 class="text-2xl font-bold text-slate-800 uppercase tracking-widest text-sm">1. Lunch in Tübingen</h3>
+                    <div class="h-px bg-slate-300 flex-1"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-100 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Vegan Food">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
+                        
+                        <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="inline-block px-3 py-1 bg-green-500/20 text-green-300 text-xs font-bold rounded-full border border-green-500/30 mb-3 backdrop-blur-md">Option A</span>
+                            <h4 class="text-3xl font-bold text-white mb-2 font-serif">Köstlich Vegan</h4>
+                            <p class="text-slate-200 text-sm mb-4 line-clamp-2">Ein modernes Paradies für Healthy Food. Bekannt für kreative Bowls und hausgemachte Limonaden direkt in der Altstadt.</p>
+                            <div class="flex gap-4 text-xs text-slate-400 font-mono uppercase tracking-wider">
+                                <span><i class="fa-solid fa-leaf text-green-400 mr-1"></i> 100% Plant-Based</span>
+                                <span><i class="fa-solid fa-euro-sign text-amber-400 mr-1"></i> Mittel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl reveal delay-200 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="African Food">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
+                        
+                        <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="inline-block px-3 py-1 bg-orange-500/20 text-orange-300 text-xs font-bold rounded-full border border-orange-500/30 mb-3 backdrop-blur-md">Option B</span>
+                            <h4 class="text-3xl font-bold text-white mb-2 font-serif">Bongoroots</h4>
+                            <p class="text-slate-200 text-sm mb-4 line-clamp-2">Afrikanische Soul-Food Küche. Warme Gewürze, herzliche Atmosphäre und Gerichte, die man nie vergisst.</p>
+                            <div class="flex gap-4 text-xs text-slate-400 font-mono uppercase tracking-wider">
+                                <span><i class="fa-solid fa-fire text-orange-400 mr-1"></i> Fusion Kitchen</span>
+                                <span><i class="fa-solid fa-euro-sign text-amber-400 mr-1"></i> Mittel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8 reveal">
+                    <div class="h-px bg-slate-300 flex-1"></div>
+                    <h3 class="text-2xl font-bold text-slate-800 uppercase tracking-widest text-sm">2. Kultur auf der Alb</h3>
+                    <div class="h-px bg-slate-300 flex-1"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-100 cursor-pointer border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1599423300746-b62533397394?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Burg Hohenzollern">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-90"></div>
+                        
+                        <div class="absolute bottom-0 left-0 p-10 w-full">
+                            <div class="mb-4">
+                                <span class="bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Der Klassiker</span>
+                            </div>
+                            <h3 class="text-4xl text-white font-serif mb-4 leading-tight">Burg Hohenzollern</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed max-w-sm">
+                                Stammsitz der preußischen Könige. Schatzkammer mit Krone & ein atemberaubendes 360° Panorama auf 855m Höhe.
+                            </p>
+                            <div class="flex items-center gap-6 border-t border-white/20 pt-6">
+                                <div>
+                                    <div class="text-slate-400 text-xs uppercase">Dauer</div>
+                                    <div class="text-white font-medium">ca. 2.5 Std</div>
+                                </div>
+                                <div>
+                                    <div class="text-slate-400 text-xs uppercase">Highlight</div>
+                                    <div class="text-white font-medium">Schatzkammer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-200 cursor-pointer border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1597401323321-4f46924840e4?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Schloss Lichtenstein">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-90"></div>
+
+                        <div class="absolute bottom-0 left-0 p-10 w-full">
+                            <div class="mb-4">
+                                <span class="bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Märchenschloss</span>
+                            </div>
+                            <h3 class="text-4xl text-white font-serif mb-4 leading-tight">Schloss Lichtenstein</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed max-w-sm">
+                                Das "Märchenschloss" Württembergs. Ein neugotischer Bau, der spektakulär und waghalsig direkt an der Felskante des Albtraufs klebt.
+                            </p>
+                            <div class="flex items-center gap-6 border-t border-white/20 pt-6">
+                                <div>
+                                    <div class="text-slate-400 text-xs uppercase">Dauer</div>
+                                    <div class="text-white font-medium">ca. 1.5 Std</div>
+                                </div>
+                                <div>
+                                    <div class="text-slate-400 text-xs uppercase">Highlight</div>
+                                    <div class="text-white font-medium">Fotospot</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 reveal">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 1</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Wildbad → Tübingen</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~60 km | 1:00h</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 2</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Tübingen → Alb</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~30 km | 0:35h</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">Etappe 3</span>
+                    <h4 class="font-bold text-lg mt-1 text-slate-800">Alb → Innsbruck</h4>
+                    <p class="text-slate-500 text-sm mt-2 font-mono bg-slate-50 inline-block px-3 py-1 rounded-full">~255 km | 2:45h</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="bg-white py-12 text-center border-t border-slate-100">
+        <p class="text-slate-300 text-xs tracking-widest font-medium uppercase">Exklusiv erstellt für Ihre Reise</p>
     </footer>
 
+    <script>
+        // Scroll Reveal Script using IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Die alte Funktion "setRoute" wird nicht mehr benötigt, 
+        // da wir jetzt alle Optionen als visuelles Grid anzeigen.
+    </script>
 </body>
 </html>
